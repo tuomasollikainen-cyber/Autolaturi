@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCharge - Älykäs Autolaturi</title>
+    <link rel="stylesheet" href="Autolaturi.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="card">
+        <h1>SmartCharge</h1>
+        
+        <div class="input-group">
+            <label for="batterySize">Akun koko (kWh)</label>
+            <input type="number" id="batterySize" placeholder="Esim. 77" min="1">
+        </div>
+        <!-- valmius Shellyn Älyreleelle -->
+        <div class="input-group">
+            <label for="shellyIp">Shelly IP-osoite (valinnainen)</label>
+            <input type="text" id="shellyIp" placeholder="Esim. 192.168.1.50">
+        </div>
+
+        <div class="input-group">
+            <label for="chargePower">Latausteho (kW)</label>
+            <input type="number" id="chargePower" value="11" min="1">
+        </div>
+
+        <div class="input-group">
+            <label for="currentSoc">Akun varaus (%)</label>
+            <input type="number" id="currentSoc" placeholder="20">
+        </div>
+
+        <div class="input-group">
+            <label for="targetSoc">Tavoite (%)</label>
+            <input type="number" id="targetSoc" placeholder="80">
+        </div>
+
+        <div class="input-group">
+            <label for="targetTime">Valmis klo</label>
+            <input type="time" id="targetTime">
+        </div>
+
+        <button id="submitBtn">Laske paras lataus</button>
+    </div>
+
+    <div class="chart-container">
+        <h2 style="text-align: center; color: #2c3e50; margin-top: 0;">Sähkön hinta (snt/kWh)</h2>
+        <canvas id="priceChart"></canvas>
+        
+        <div id="status" style="margin-top: 2rem;"></div>
+    </div>
+</div>
+
+<script src="Autolaturi.js"></script>
+</body>
+</html>
